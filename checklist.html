@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <title>Push-ups</title>
+  <style type="text/css">
+    /*
+Photo credits: https://stocksnap.io/
+Pen inspired by Radek Skrzypczak Dribbble. Check it out: https://dribbble.com/shots/2516608-Completed-task-animation
+*/
+@font-face {
+    font-family: "Vazir";
+    src: url(https://lib.arvancloud.com/ar/font/vazir-2.0.0/Vazir.ttf);
+}
+body {
+      background-color: #26282b;
+  font-family: "Vazir", sans-serif;
+  font-size: 14px;
+}
+
+html *, body * {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  width: 90%;
+  max-width: 425px;
+  margin: 30px auto;
+  background-color: #1C1D1F;
+  position: relative;
+  z-index: 0;
+}
+main header {
+  text-align: justify;
+  color: #FFF;
+  line-height: 0;
+  padding: 19px 5%;
+  position: relative;
+}
+main header span, main header h3, main header .task-indicators {
+  display: inline-block;
+  width: auto;
+  line-height: 1.5;
+}
+main header h3 {
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  font-weight: 400;
+}
+main header .task-indicators {
+  font-size: 12px;
+}
+main header .task-indicators span {
+  padding: 0 8px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  display: inline-block;
+  margin-left: 5px;
+}
+main header .task-indicators span:nth-child(1) {
+  color: #F75851;
+}
+main header .task-indicators span:nth-child(2) {
+  color: #ac9e9e;
+}
+main header .task-indicators span:nth-child(2) i[class*="fa-"] {
+  padding-right: 3px;
+}
+main header:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+header {
+  background-color: #1C1D1F;
+}
+
+mark {
+  background-color: transparent;
+}
+
+h2 {
+  font-size: 21px;
+}
+
+.checkbox {
+  text-align: justify;
+  direction: rtl;
+  position: relative;
+  line-height: 0;
+}
+.checkbox:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+.checkbox input, .checkbox .label, .checkbox .check {
+  display: inline-block;
+  vertical-align: middle;
+}
+.checkbox .label {
+  max-width: 200px;
+}
+.checkbox .check {
+  position: relative;
+}
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+}
+.checkbox input[type="checkbox"]:focus {
+  outline: 0;
+}
+.checkbox input[type="checkbox"]:checked + .ripple-container .check-off {
+  border-color: #FFF;
+}
+.checkbox input[type="checkbox"]:checked + .ripple-container .check-on {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  color: #FFF;
+}
+.checkbox input[type="checkbox"]:checked + .ripple-container .check-ripple:before, .checkbox input[type="checkbox"]:checked + .ripple-container .check-ripple:after {
+  -webkit-transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -moz-transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+.checkbox input[type="checkbox"]:checked + .ripple-container .check-ripple:before {
+  -webkit-transform: scale(3);
+  -moz-transform: scale(3);
+  -ms-transform: scale(3);
+  -o-transform: scale(3);
+  transform: scale(3);
+}
+.checkbox input[type="checkbox"]:checked + .ripple-container .check-ripple:after {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.checkbox input[type="checkbox"] + .ripple-container {
+  width: auto;
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  top: 2px;
+  pointer-events: none;
+}
+.checkbox input[type="checkbox"] + .ripple-container:before {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  display: block;
+  height: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.checkbox input[type="checkbox"] + .ripple-container .check-off {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0;
+  top: 0;
+  border-radius: 2px;
+  border: 2px solid #fa9e9a;
+  transition: border-color ease 0.28s;
+}
+.checkbox input[type="checkbox"] + .ripple-container .check-on {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  transition: all 0s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 25px;
+}
+.checkbox input[type="checkbox"] + .ripple-container .check-ripple:before, .checkbox input[type="checkbox"] + .ripple-container .check-ripple:after {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  transition: all 0s;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+}
+.checkbox input[type="checkbox"] + .ripple-container .check-ripple:before {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.checkbox input[type="checkbox"] + .ripple-container .check-ripple:after {
+  background-color: rgba(219, 213, 213, 0.6);
+}
+
+.task-list {
+  position: relative;
+  color: #FFF;
+  padding: 15px 25px;
+}
+.task-list mark {
+  color: #FFF;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.task-list time {
+  font-weight: 300;
+  font-size: 12px;
+}
+.task-list h2 {
+  margin: 10px 0;
+  font-weight: 700;
+}
+.task-list h3 {
+  margin: 0 0 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #989ba2;
+  font-size: 14px;
+  font-weight: 400;
+}
+.task-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+.task-list ul li {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  padding: 15px 0;
+  position: relative;
+  /* CHECKED STYLE */
+}
+.task-list ul li .label {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  margin-bottom: 2px;
+  line-height: 1.2;
+  direction: ltr;
+  text-align: left;
+  opacity: 1;
+}
+.task-list ul li .task-msg {
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  right: 40px;
+  top: 47%;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+}
+.task-list ul li.task-checked .task-msg {
+  -webkit-animation: fadeInOut 2s;
+  -moz-animation: fadeInOut 2s;
+  animation: fadeInOut 2s;
+}
+.task-list ul li.task-checked .label {
+  opacity: 0.5;
+}
+.task-list.current {
+     background-color: rgba(214, 43, 49, 0.57);
+    background-image: -webkit-linear-gradient(-315deg, #d62b31 0%, #f75851 100%);
+    background-image: linear-gradient(45deg,rgba(214, 43, 49, 0) 0%, rgba(247, 88, 81, 0.75) 100%);
+    z-index: 1;
+}
+.task-list.current ul li {
+  border-top: 1px solid #f86f69;
+}
+.task-list.current:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 0;
+  background-image: url("pufhfghfhshups.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.task-list.notcurrent {
+  color: white;
+  background-color: #1C1D1F;
+}
+.task-list.notcurrent ul li {
+  border-top: 1px solid #34363a;
+}
+.task-list.notcurrent ul, .task-list.notcurrent mark {
+  color: #71757d;
+}
+.task-list.notcurrent .checkbox input[type="checkbox"] + .ripple-container .check-off {
+  border: 2px solid #FFF;
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, -50%, 0);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -50%, 0);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-10px, -50%, 0);
+  }
+}
+@-moz-keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    -moz-transform: translate3d(10px, -50%, 0);
+  }
+  30% {
+    opacity: 1;
+    -moz-transform: translate3d(0, -50%, 0);
+  }
+  75% {
+    opacity: 1;
+    -moz-transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translate3d(-10px, -50%, 0);
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, -50%, 0);
+    -moz-transform: translate3d(10px, -50%, 0);
+    -ms-transform: translate3d(10px, -50%, 0);
+    -o-transform: translate3d(10px, -50%, 0);
+    transform: translate3d(10px, -50%, 0);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0, -50%, 0);
+    -o-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -50%, 0);
+    -moz-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0, -50%, 0);
+    -o-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-10px, -50%, 0);
+    -moz-transform: translate3d(-10px, -50%, 0);
+    -ms-transform: translate3d(-10px, -50%, 0);
+    -o-transform: translate3d(-10px, -50%, 0);
+    transform: translate3d(-10px, -50%, 0);
+  }
+}
+
+  </style>
+</head>
+<body>
+<div id="day1">
+  <main>
+    <header>
+      <span style="display:none;"><i class="fa fa-arrow-left"></i><span style="display:none;" class="sr-only">Back</span></span>
+      <h3 id="date">۱۳۹۶/۱۲/۰۶</h3><br>
+      <div class="task-indicators">
+        <span><i class="fa fa-check"></i><h5 id="day">1</h5></span>
+      </div>
+    </header>
+
+    <section class="task-list current">
+      <center><h2>انجام دادند</h2></center>
+      <ul>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="mohammadreza" type="checkbox" name="task_00">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>محمد رضا</mark>
+              <br>
+              <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="danial" type="checkbox" name="task_00">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>دانیال</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="erfan" type="checkbox" name="task_01">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>عرفان</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="saleh" type="checkbox" name="task_01">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>صالح</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="shayan" type="checkbox" name="task_01">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>شایان</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="ali" type="checkbox" name="task_02">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>علی</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="taghi" type="checkbox" name="task_02">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>تقی</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+        <li>
+          <div class="checkbox">
+            <div class="check">
+              <input id="reza" type="checkbox" name="task_02">
+              <div class="ripple-container">
+                <div class="check-off"></div>
+                <div class="check-on"><i class="fa fa-check"></i></div>
+                <div class="check-ripple"></div>
+              </div>
+            </div>
+            <div class="label">
+              <mark>رضا</mark>
+            </div>
+          </div>
+          <span class="task-msg">ماشاالله</span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+<div id="before_date" style="
+    filter: blur(2px);
+"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+
+
+function gregorian_to_jalali(gy,gm,gd){
+ g_d_m=[0,31,59,90,120,151,181,212,243,273,304,334];
+ if(gy > 1600){
+  jy=979;
+  gy-=1600;
+ }else{
+  jy=0;
+  gy-=621;
+ }
+ gy2=(gm > 2)?(gy+1):gy;
+ days=(365*gy) +(parseInt((gy2+3)/4)) -(parseInt((gy2+99)/100)) +(parseInt((gy2+399)/400)) -80 +gd +g_d_m[gm-1];
+ jy+=33*(parseInt(days/12053)); 
+ days%=12053;
+ jy+=4*(parseInt(days/1461));
+ days%=1461;
+ if(days > 365){
+  jy+=parseInt((days-1)/365);
+  days=(days-1)%365;
+ }
+ jm=(days < 186)?1+parseInt(days/31):7+parseInt((days-186)/30);
+ jd=1+((days < 186)?(days%31):((days-186)%30));
+ return [jy,jm,jd];
+}
+
+
+function jalali_to_gregorian(jy,jm,jd){
+ if(jy > 979){
+  gy=1600;
+  jy-=979;
+ }else{
+  gy=621;
+ }
+ days=(365*jy) +((parseInt(jy/33))*8) +(parseInt(((jy%33)+3)/4)) +78 +jd +((jm<7)?(jm-1)*31:((jm-7)*30)+186);
+ gy+=400*(parseInt(days/146097));
+ days%=146097;
+ if(days > 36524){
+  gy+=100*(parseInt(--days/36524));
+  days%=36524;
+  if(days >= 365)days++;
+ }
+ gy+=4*(parseInt(days/1461));
+ days%=1461;
+ if(days > 365){
+  gy+=parseInt((days-1)/365);
+  days=(days-1)%365;
+ }
+ gd=days+1;
+ sal_a=[0,31,((gy%4==0 && gy%100!=0) || (gy%400==0))?29:28,31,30,31,30,31,31,30,31,30,31];
+ for(gm=0;gm<13;gm++){
+  v=sal_a[gm];
+  if(gd <= v)break;
+  gd-=v;
+ }
+ return [gy,gm,gd]; 
+}
+
+
+
+ 
+
+
+$( document ).ready(function() {
+
+var checkList = $('.check'),
+toDoCheck = checkList.children('input[type="checkbox"]');
+toDoCheck.each(function(index, element) {
+    var $this = $(element),
+    taskItem = $this.closest('li');
+    $this.on('click', function(e) {
+    taskItem.toggleClass('task-checked');
+  });
+});
+
+
+var d = new Date();
+
+var month = d.getMonth()+1;
+var day = d.getDate();
+
+var output = d.getFullYear() + '/' +
+    (month<10 ? '' : '') + month + '/' +
+    (day<10 ? '' : '') + day;
+
+
+//console.log(output)
+//console.log(gregorian_to_jalali(d.getFullYear(),month,day))
+var num_dat = ""
+var start_date = '3'
+var persian_date = gregorian_to_jalali(d.getFullYear(),month,day)
+$("#date").text(persian_date)
+
+if(persian_date[2] == start_date){
+  num_day = "day1"
+  $("#day").text("1")
+  console.log(num_day)
+}else{
+  num_day = (persian_date[2]-start_date)+1
+  $("#day").text(num_day)
+  console.log(num_day)
+  num_day = "day"+num_day
+}
+
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+  "method": "GET",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": "5a90765c16d5526228b426cc",
+    "cache-control": "no-cache"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  $.each(response, function (i, item) {
+    if(item['reza']){
+      $('#reza').prop('checked', true);
+    }else if(item['ali']){
+      $('#ali').prop('checked', true);
+    }else if(item['mohammadreza']){
+      $('#mohammadreza').prop('checked', true);
+    }else if(item['erfan']){
+      $('#erfan').prop('checked', true);
+    }else if(item['danial']){
+      $('#danial').prop('checked', true);
+    }else if(item['shayan']){
+      $('#shayan').prop('checked', true);
+    }else if(item['taghi']){
+      $('#taghi').prop('checked', true);
+    }else if(item['saleh']){
+      $('#saleh').prop('checked', true);
+    }
+    
+  });
+
+});
+
+//TODO dialog box
+
+$('#reza').change(
+    function(){
+        if ($(this).is(':checked')) {
+            
+          var person = prompt("اسم شاعرت");
+          if (person != null) {
+             if(person == "babataher"){
+
+
+                  var jsondata = {"reza": "1"};
+                  var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+                    "method": "POST",
+                    "headers": {
+                      "content-type": "application/json",
+                      "x-apikey": "5a90765c16d5526228b426cc",
+                      "cache-control": "no-cache"
+                    },
+                    "processData": false,
+                    "data": JSON.stringify(jsondata)
+                  }
+
+                  $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    alert("ای ول")
+                  });
+
+                }else{
+                  alert("اشتباهه !")
+                }
+
+
+
+
+             }
+             
+          }
+
+
+          
+    });
+
+$('#ali').change(
+    function(){
+        if ($(this).is(':checked')) {
+            
+var person = prompt("اسم شاعرت");
+          if (person != null) {
+             if(person == "shahriar"){
+
+
+            var jsondata = {"ali": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+          }
+        }else{
+          alert("اشتباهه !")
+        }
+      }
+    });
+
+$('#saleh').change(
+    function(){
+        if ($(this).is(':checked')) {
+            var person = prompt("اسم شاعرت");
+          if (person != null) {
+             if(person == "hafez"){
+            var jsondata = {"saleh": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+          }
+        }else{
+          alert("اشتباهه !")
+        }
+      }
+    });
+
+
+$('#danial').change(
+    function(){
+        if ($(this).is(':checked')) {
+            var person = prompt("اسم شاعرت");
+          if (person != null) {
+             if(person == "ferdowsi"){
+            var jsondata = {"danial": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+          }
+        }else{
+           alert("اشتباهه !")
+        }
+      }
+    });
+
+
+$('#mohammadreza').change(
+    function(){
+        if ($(this).is(':checked')) {
+var person = prompt("اسم شاعرت");
+          if (person != null) {
+             if(person == "khayyam"){
+            var jsondata = {"mohammadreza": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+
+          }
+        }else{
+          alert("اشتباهه !")
+        }
+      }
+    });
+
+$('#erfan').change(
+    function(){
+        if ($(this).is(':checked')) {
+         var person = prompt("اسم شاعرت");
+          if (person != null) {
+             if(person == "rudaki"){
+            var jsondata = {"erfan": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+
+
+          }
+        }else{
+          alert("اشتباهه !")
+        }
+      }
+    });
+
+$('#taghi').change(
+    function(){
+        if ($(this).is(':checked')) {
+          var person = prompt("saadi");
+          if (person != null) {
+             if(person == "saadi"){
+            var jsondata = {"taghi": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+
+          }
+        }else{
+          alert("اشتباهه !")
+        }
+      }
+    });
+
+
+$('#shayan').change(
+    function(){
+        if ($(this).is(':checked')) {
+        var person = prompt("attar");
+          if (person != null) {
+             if(person == "attar"){
+            var jsondata = {"shayan": "1"};
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+              "method": "POST",
+              "headers": {
+                "content-type": "application/json",
+                "x-apikey": "5a90765c16d5526228b426cc",
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": JSON.stringify(jsondata)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+
+
+          }
+        }else{
+          alert("اشتباهه !")
+        }
+      }
+    });
+
+
+
+
+// append before current date
+var temp = '';
+var j = 1;
+console.log(start_date)
+console.log(persian_date[2])
+var promises = [];
+
+for(var j=(persian_date[2]-start_date);j>=1;j--){
+   num_day = "day"+j
+    console.log(num_day)
+  var reza_status = false;
+  var mohammadareza_status = false;
+  var ali_status = false;
+  var erfan_status = false;
+  var shayan_status = false;
+  var danial_status = false;
+  var taghi_status = false;
+  var saleh_status = false;
+
+
+
+   
+
+  var request = $.ajax({
+  "async": false,
+    "crossDomain": true,
+    "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+    "method": "GET",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": "5a90765c16d5526228b426cc",
+      "cache-control": "no-cache"
+    },
+    success: function (response) {
+      $.each(response, function (i, item) {
+
+
+
+    console.log(item['reza'])
+        if(item['reza']=="1"){
+          reza_status = true;
+        }
+        console.log(item['mohammadareza'])
+        if(item['mohammadareza']=="1"){
+          mohammadareza_status = true;
+        }
+        console.log(item['ali'])
+        if(item['ali']=="1"){
+          ali_status = true;
+        }
+        console.log(item['erfan'])
+        if(item['erfan']=="1"){
+          erfan_status = true;
+        }
+        console.log(item['shayan'])
+        if(item['shayan']=="1"){
+          shayan_status = true;
+        }
+        console.log(item['danial'])
+        if(item['danial']=="1"){
+          danial_status = true;
+        }
+        console.log(item['taghi'])
+        if(item['taghi']=="1"){
+          taghi_status = true;
+        }
+        console.log(item['saleh'])
+        if(item['saleh']=="1"){
+          saleh_status = true;
+        }
+
+        
+
+
+    var temp = '<main>\
+        <header>\
+          <span style="display:none;"><i class="fa fa-arrow-left"></i><span style="display:none;" class="sr-only">Back</span></span>\
+          <h3 id="date">'+ "۱۳۹۶/۱۲/" + j +'</h3><br>\
+          <div class="task-indicators">\
+            <span><i class="fa fa-check"></i><h5 id="day">1</h5></span>\
+          </div>\
+        </header>\
+        <section class="task-list current">\
+          <center><h2>انجام دادند</h2></center>\
+          <ul>'
+    if(mohammadareza_status){
+      temp +=' <li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="mohammadreza" type="checkbox" checked name="task_00">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>محمد رضا</mark>\
+                  <br>\
+                  <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +=' <li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="mohammadreza" type="checkbox" name="task_00">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>محمد رضا</mark>\
+                  <br>\
+                  <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(danial_status){
+      temp +=' <li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="danial" type="checkbox" checked name="task_00">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>دانیال</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +=' <li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="danial" type="checkbox" name="task_00">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>دانیال</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(erfan_status){
+      temp +='  <li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="erfan" type="checkbox" checked name="task_01">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>عرفان</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +='  <li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="erfan" type="checkbox" name="task_01">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>عرفان</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(saleh_status){
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="saleh" type="checkbox" checked name="task_01">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>صالح</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="saleh" type="checkbox" name="task_01">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>صالح</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(shayan_status){
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="shayan" type="checkbox" checked name="task_01">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>شایان</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="shayan" type="checkbox" name="task_01">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>شایان</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(ali_status){
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="ali" type="checkbox" checked name="task_02">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>علی</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="ali" type="checkbox" name="task_02">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>علی</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(taghi_status){
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="taghi" type="checkbox" checked name="task_02">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>تقی</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                  <input id="taghi" type="checkbox" name="task_02">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>تقی</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    if(reza_status){
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                    <input id="reza" type="checkbox" checked checked name="task_02">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>رضا</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }else{
+      temp +='<li>\
+              <div class="checkbox">\
+                <div class="check">\
+                    <input id="reza" type="checkbox" name="task_02">\
+                  <div class="ripple-container">\
+                    <div class="check-off"></div>\
+                    <div class="check-on"><i class="fa fa-check"></i></div>\
+                    <div class="check-ripple"></div>\
+                  </div>\
+                </div>\
+                <div class="label">\
+                  <mark>رضا</mark>\
+                </div>\
+              </div>\
+              <span class="task-msg">ماشاالله</span>\
+            </li>'
+    }
+
+    temp +='</ul>\
+        </section>\
+      </main>'
+
+    
+
+
+$("#before_date").append(temp);
+temp = ''
+
+    });
+
+  },complete: function(c){
+    
+  }
+
+  });
+
+ 
+}
+promises.push( request);
+  
+$.when.apply(null, promises).done(function(){
+   alert('All done')
+})
+
+
+});
+
+
+</script>
+</body>
+</html>
