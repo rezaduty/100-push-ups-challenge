@@ -799,9 +799,9 @@ $('#reza').change(
           var person = prompt("اسم شاعرت");
           if (person != null) {
              if(person == "babataher"){
+                  var v = prompt("چند تا رفتید؟");
 
-
-                  var jsondata = {"reza": "1"};
+                  var jsondata = {"reza": v};
                   var settings = {
                     "async": true,
                     "crossDomain": true,
@@ -842,10 +842,11 @@ $('#ali').change(
             
 var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
+
              if(person == "shahriar"){
+              var v = prompt("چند تا رفتید؟");
 
-
-            var jsondata = {"ali": "1"};
+            var jsondata = {"ali": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -878,7 +879,8 @@ $('#saleh').change(
             var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "hafez"){
-            var jsondata = {"saleh": "1"};
+              var v = prompt("چند تا رفتید؟");
+            var jsondata = {"saleh": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -912,7 +914,8 @@ $('#danial').change(
             var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "ferdowsi"){
-            var jsondata = {"danial": "1"};
+              var v = prompt("چند تا رفتید؟");
+            var jsondata = {"danial": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -946,7 +949,8 @@ $('#mohammadreza').change(
 var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "khayyam"){
-            var jsondata = {"mohammadreza": "1"};
+              var v = prompt("چند تا رفتید؟");
+            var jsondata = {"mohammadreza": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -980,7 +984,8 @@ $('#erfan').change(
          var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "rudaki"){
-            var jsondata = {"erfan": "1"};
+              var v = prompt("چند تا رفتید؟");
+            var jsondata = {"erfan": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -1015,7 +1020,8 @@ $('#taghi').change(
           var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "saadi"){
-            var jsondata = {"taghi": "1"};
+              var v = prompt("چند تا رفتید؟");
+            var jsondata = {"taghi": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -1050,7 +1056,8 @@ $('#shayan').change(
         var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "attar"){
-            var jsondata = {"shayan": "1"};
+              var v = prompt("چند تا رفتید؟");
+            var jsondata = {"shayan": v};
             var settings = {
               "async": true,
               "crossDomain": true,
@@ -1330,42 +1337,42 @@ temp +='</ul>\
                 console.log(response.length)
                 c++;
                   //console.log(item['reza'])
-                if(item['reza']=="1" && reza_status!=true){
+                if(item['reza']!="" && reza_status!=true){
                   reza_status = true;
                   reza_all_status = false;
                 }
                 //console.log(item['mohammadareza'])
-                if(item['mohammadareza']=="1"  && mohammadareza_status!=true){
+                if(item['mohammadareza']!=""  && mohammadareza_status!=true){
                   mohammadareza_status = true;
                   mohammadreza_all_status = false;
                 }
                 //console.log(item['ali'])
-                if(item['ali']=="1"  && ali_status!=true){
+                if(item['ali']!=""  && ali_status!=true){
                   ali_status = true;
                   ali_all_status = false;
                 }
                 //console.log(item['erfan'])
-                if(item['erfan']=="1"  && erfan_status!=true){
+                if(item['erfan']!=""  && erfan_status!=true){
                   erfan_status = true;
                   erfan_all_status = false;
                 }
                 //console.log(item['shayan'])
-                if(item['shayan']=="1"  && shayan_status!=true){
+                if(item['shayan']!=""  && shayan_status!=true){
                   shayan_status = true;
                   shayan_all_status = false;
                 }
                 //console.log(item['danial'])
-                if(item['danial']=="1"  && danial_status!=true){
+                if(item['danial']!=""  && danial_status!=true){
                   danial_status = true;
                   danial_all_status = false;
                 }
                 //console.log(item['taghi'])
-                if(item['taghi']=="1"  && taghi_status!=true){
+                if(item['taghi']!=""  && taghi_status!=true){
                   taghi_status = true;
                   taghi_all_status = false;
                 }
                 //console.log(item['saleh'])
-                if(item['saleh']=="1"  && saleh_status!=true){
+                if(item['saleh']!=""  && saleh_status!=true){
                   saleh_status = true;
                   saleh_all_status = false;
                 }
