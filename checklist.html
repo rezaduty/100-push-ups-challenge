@@ -734,6 +734,29 @@ var output = d.getFullYear() + '/' +
     (day<10 ? '' : '') + day;
 
 
+  var request = $.ajax({
+  "async": false,
+    "crossDomain": true,
+    "url": "http://api.timezonedb.com/v2/get-time-zone?key=1SVTWWF8F5NP&format=json&by=zone&zone=Asia/Tehran",
+    "method": "GET",
+    success: function (response) {
+      $.each(response, function (i, item) {
+        if(i=='formatted'){
+          var res = item.split(" ");
+          var da = res[0]
+          res = da.split("-")
+          console.log(res[0])
+          console.log(res[1])
+          day = res[2]
+
+
+
+
+
+
+
+
+
 
 
 
@@ -744,7 +767,7 @@ var output = d.getFullYear() + '/' +
 var num_dat = ""
 var start_date = '7'
 
-var persian_date = gregorian_to_jalali(d.getFullYear(),month,day)
+var persian_date = gregorian_to_jalali(d.getFullYear(),month,parseInt(day)+0)
 $("#date").text(persian_date)
 
 if(persian_date[2] == start_date){
@@ -1759,6 +1782,46 @@ $('body').css("font-family",'Vazir');
     }
   }
     traverse(document.body);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        
+      })
+    }
+  });
+
+
 
 });
 
