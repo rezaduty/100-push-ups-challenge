@@ -1,3 +1,17 @@
+<!--
+
+██████╗██████████████╗█████╗██████╗██╗   ████████████╗   ██╗
+██╔══████╔════╚══███╔██╔══████╔══████║   ██╚══██╔══╚██╗ ██╔╝
+██████╔█████╗   ███╔╝█████████║  ████║   ██║  ██║   ╚████╔╝ 
+██╔══████╔══╝  ███╔╝ ██╔══████║  ████║   ██║  ██║    ╚██╔╝  
+██║  ██████████████████║  ████████╔╚██████╔╝  ██║     ██║   
+╚═╝  ╚═╚══════╚══════╚═╝  ╚═╚═════╝ ╚═════╝   ╚═╝     ╚═╝   
+                                                            
+
+Developed for 30-day push ups challenge
+
+❤ for all friends 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,7 +107,6 @@ h2 {
 
 .checkbox {
   text-align: justify;
-  direction: rtl;
   position: relative;
   line-height: 0;
 }
@@ -303,9 +316,9 @@ h2 {
   opacity: 0.5;
 }
 .task-list.current {
-     background-color: rgba(214, 43, 49, 0.57);
+     background-color: rgb(74, 14, 14);
     background-image: -webkit-linear-gradient(-315deg, #d62b31 0%, #f75851 100%);
-    background-image: linear-gradient(45deg,rgba(214, 43, 49, 0) 0%, rgba(247, 88, 81, 0.75) 100%);
+    background-image: linear-gradient(45deg,rgba(214, 43, 49, 0) 0%, rgb(66, 8, 8) 100%);
     z-index: 1;
 }
 .task-list.current ul li {
@@ -409,10 +422,75 @@ h2 {
     transform: translate3d(-10px, -50%, 0);
   }
 }
+/*-- Base Styles --*/
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+/*-- Sign Styles --*/
+.sign {
+  min-height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body {
+  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-size: cover;
+  background-position: center;
+  background-color: #141414;
+}
+.sign__word {
+  font-size: 5.6rem;
+  text-align: center;
+  line-height: 1;
+  color: #c6e2ff;
+  -webkit-animation: neon .08s ease-in-out infinite alternate;
+          animation: neon .08s ease-in-out infinite alternate;
+}
+
+/*-- Animation Keyframes --*/
+@-webkit-keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
+  }
+}
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
+  }
+}
 
   </style>
 </head>
 <body>
+<div class="sign">
+  <span class="sign__word">میتونی تو</span>
+  
+</div>
+
 <div id="day1">
   <main>
     <header>
@@ -659,7 +737,7 @@ var output = d.getFullYear() + '/' +
 //console.log(output)
 //console.log(gregorian_to_jalali(d.getFullYear(),month,day))
 var num_dat = ""
-var start_date = '4'
+var start_date = '6'
 var persian_date = gregorian_to_jalali(d.getFullYear(),month,day)
 $("#date").text(persian_date)
 
@@ -672,6 +750,7 @@ if(persian_date[2] == start_date){
   $("#day").text(num_day)
   console.log(num_day)
   num_day = "day"+num_day
+  console.log(num_day)
 }
 
 
@@ -761,7 +840,7 @@ $('#ali').change(
     function(){
         if ($(this).is(':checked')) {
             
-var person = prompt("اسم شاعرت");
+var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "shahriar"){
 
@@ -783,6 +862,7 @@ var person = prompt("اسم شاعرت");
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
           }
@@ -795,7 +875,7 @@ var person = prompt("اسم شاعرت");
 $('#saleh').change(
     function(){
         if ($(this).is(':checked')) {
-            var person = prompt("اسم شاعرت");
+            var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "hafez"){
             var jsondata = {"saleh": "1"};
@@ -815,6 +895,7 @@ $('#saleh').change(
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
           }
@@ -828,7 +909,7 @@ $('#saleh').change(
 $('#danial').change(
     function(){
         if ($(this).is(':checked')) {
-            var person = prompt("اسم شاعرت");
+            var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "ferdowsi"){
             var jsondata = {"danial": "1"};
@@ -848,6 +929,7 @@ $('#danial').change(
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
           }
@@ -861,7 +943,7 @@ $('#danial').change(
 $('#mohammadreza').change(
     function(){
         if ($(this).is(':checked')) {
-var person = prompt("اسم شاعرت");
+var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "khayyam"){
             var jsondata = {"mohammadreza": "1"};
@@ -881,6 +963,7 @@ var person = prompt("اسم شاعرت");
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
 
@@ -894,7 +977,7 @@ var person = prompt("اسم شاعرت");
 $('#erfan').change(
     function(){
         if ($(this).is(':checked')) {
-         var person = prompt("اسم شاعرت");
+         var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "rudaki"){
             var jsondata = {"erfan": "1"};
@@ -914,6 +997,7 @@ $('#erfan').change(
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
 
@@ -928,7 +1012,7 @@ $('#erfan').change(
 $('#taghi').change(
     function(){
         if ($(this).is(':checked')) {
-          var person = prompt("saadi");
+          var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "saadi"){
             var jsondata = {"taghi": "1"};
@@ -948,6 +1032,7 @@ $('#taghi').change(
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
 
@@ -962,7 +1047,7 @@ $('#taghi').change(
 $('#shayan').change(
     function(){
         if ($(this).is(':checked')) {
-        var person = prompt("attar");
+        var person = prompt("اسم شاعرت چی هست؟");
           if (person != null) {
              if(person == "attar"){
             var jsondata = {"shayan": "1"};
@@ -982,6 +1067,7 @@ $('#shayan').change(
 
             $.ajax(settings).done(function (response) {
               console.log(response);
+              alert("ای ول")
             });
 
 
@@ -998,14 +1084,13 @@ $('#shayan').change(
 
 // append before current date
 var temp = '';
-var j = 1;
 console.log(start_date)
 console.log(persian_date[2])
 var promises = [];
-
+var da = 0;
 for(var j=(persian_date[2]-start_date);j>=1;j--){
-   num_day = "day"+j
-    console.log(num_day)
+   num_dayy = "day"+j
+    //console.log(num_day)
   var reza_status = false;
   var mohammadareza_status = false;
   var ali_status = false;
@@ -1014,15 +1099,24 @@ for(var j=(persian_date[2]-start_date);j>=1;j--){
   var danial_status = false;
   var taghi_status = false;
   var saleh_status = false;
+  var reza_all_status = true;
+  var taghi_all_status = true;
+  var saleh_all_status = true;
+  var danial_all_status = true;
+  var erfan_all_status = true;
+  var mohammadreza_all_status = true;
+  var shayan_all_status = true;
+  var ali_all_status = true;
 
 
 
-   
+
+   var c= 0;
 
   var request = $.ajax({
   "async": false,
     "crossDomain": true,
-    "url": "https://pushups30100-13fa.restdb.io/rest/"+num_day,
+    "url": "https://pushups30100-13fa.restdb.io/rest/"+num_dayy,
     "method": "GET",
     "headers": {
       "content-type": "application/json",
@@ -1030,360 +1124,597 @@ for(var j=(persian_date[2]-start_date);j>=1;j--){
       "cache-control": "no-cache"
     },
     success: function (response) {
-      $.each(response, function (i, item) {
+      if(response==''){
+        da = da+1;
+        var d =  parseInt(persian_date[2])-da;
+        var te = j;
+        var temp = '<main>\
+                <header>\
+                  <span style="display:none;"><i class="fa fa-arrow-left"></i><span style="display:none;" class="sr-only">Back</span></span>\
+                  <h3 id="date">'+ "۱۳۹۶/۱۲/" + d +'</h3><br>\
+                  <div class="task-indicators">\
+                    <span><i class="fa fa-check"></i><h5 id="day">'+ te +'</h5></span>\
+                  </div>\
+                </header>\
+                <section class="task-list current">\
+                  <center><h2>انجام دادند</h2></center>\
+                  <ul>'
 
 
 
-    console.log(item['reza'])
-        if(item['reza']=="1"){
-          reza_status = true;
-        }
-        console.log(item['mohammadareza'])
-        if(item['mohammadareza']=="1"){
-          mohammadareza_status = true;
-        }
-        console.log(item['ali'])
-        if(item['ali']=="1"){
-          ali_status = true;
-        }
-        console.log(item['erfan'])
-        if(item['erfan']=="1"){
-          erfan_status = true;
-        }
-        console.log(item['shayan'])
-        if(item['shayan']=="1"){
-          shayan_status = true;
-        }
-        console.log(item['danial'])
-        if(item['danial']=="1"){
-          danial_status = true;
-        }
-        console.log(item['taghi'])
-        if(item['taghi']=="1"){
-          taghi_status = true;
-        }
-        console.log(item['saleh'])
-        if(item['saleh']=="1"){
-          saleh_status = true;
-        }
+              temp +=' <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="mohammadreza" type="checkbox" name="task_00">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>محمد رضا</mark>\
+                          <br>\
+                          <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+             
+              temp +=' <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="danial" type="checkbox" name="task_00">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>دانیال</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+               
+              temp +='  <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="erfan" type="checkbox" name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>عرفان</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="saleh" type="checkbox" name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>صالح</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="shayan" type="checkbox" name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>شایان</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="ali" type="checkbox" name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>علی</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="taghi" type="checkbox" name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>تقی</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                            <input id="reza" type="checkbox" name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>رضا</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  
+
+            
+
+            
+            
+temp +='</ul>\
+                </section>\
+              </main>'
+              $("#before_date").append(temp);
+              temp = ''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }else{
+        da = da+1
+        var d =  parseInt(persian_date[2])-da;
+        var te = j;
+        console.log(response)
+        var temp = '<main>\
+                <header>\
+                  <span style="display:none;"><i class="fa fa-arrow-left"></i><span style="display:none;" class="sr-only">Back</span></span>\
+                  <h3 id="date">'+ "۱۳۹۶/۱۲/" + d +'</h3><br>\
+                  <div class="task-indicators">\
+                    <span><i class="fa fa-check"></i><h5 id="day">'+ te +'</h5></span>\
+                  </div>\
+                </header>\
+                <section class="task-list current">\
+                  <center><h2>انجام دادند</h2></center>\
+                  <ul>'
+        $.each(response, function (i, item) {
+                console.log(response.length)
+                c++;
+                  //console.log(item['reza'])
+                if(item['reza']=="1" && reza_status!=true){
+                  reza_status = true;
+                  reza_all_status = false;
+                }
+                //console.log(item['mohammadareza'])
+                if(item['mohammadareza']=="1"  && mohammadareza_status!=true){
+                  mohammadareza_status = true;
+                  mohammadreza_all_status = false;
+                }
+                //console.log(item['ali'])
+                if(item['ali']=="1"  && ali_status!=true){
+                  ali_status = true;
+                  ali_all_status = false;
+                }
+                //console.log(item['erfan'])
+                if(item['erfan']=="1"  && erfan_status!=true){
+                  erfan_status = true;
+                  erfan_all_status = false;
+                }
+                //console.log(item['shayan'])
+                if(item['shayan']=="1"  && shayan_status!=true){
+                  shayan_status = true;
+                  shayan_all_status = false;
+                }
+                //console.log(item['danial'])
+                if(item['danial']=="1"  && danial_status!=true){
+                  danial_status = true;
+                  danial_all_status = false;
+                }
+                //console.log(item['taghi'])
+                if(item['taghi']=="1"  && taghi_status!=true){
+                  taghi_status = true;
+                  taghi_all_status = false;
+                }
+                //console.log(item['saleh'])
+                if(item['saleh']=="1"  && saleh_status!=true){
+                  saleh_status = true;
+                  saleh_all_status = false;
+                }
+
+                
+
+
+            
+            if(mohammadareza_status){
+              temp +=' <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="mohammadreza" type="checkbox" checked name="task_00">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>محمد رضا</mark>\
+                          <br>\
+                          <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+              mohammadareza_status = false
+            }
+
+            if(danial_status){
+              temp +=' <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="danial" type="checkbox" checked name="task_00">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>دانیال</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                danial_status = false
+            }
+
+            if(erfan_status){
+              temp +='  <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="erfan" type="checkbox" checked name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>عرفان</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                erfan_status = false
+            }
+            if(saleh_status){
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="saleh" type="checkbox" checked name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>صالح</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  saleh_status = false
+            }
+
+            if(shayan_status){
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="shayan" type="checkbox" checked name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>شایان</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                shayan_status = false
+            }
+            if(ali_status){
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="ali" type="checkbox" checked name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>علی</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  ali_status = false
+            }
+
+            if(taghi_status){
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="taghi" type="checkbox" checked name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>تقی</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  taghi_status = false
+            }
+
+            if(reza_status){
+              temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                            <input id="reza" type="checkbox" checked checked name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>رضا</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+                  reza_status = false
+            }
+
+            
+
+            
+            if(c==response.length){
+              console.log("sdfsdf")
+                if(reza_all_status){
+                  temp +='<li>\
+                        <div class="checkbox">\
+                          <div class="check">\
+                              <input id="reza" type="checkbox" name="task_02">\
+                            <div class="ripple-container">\
+                              <div class="check-off"></div>\
+                              <div class="check-on"><i class="fa fa-check"></i></div>\
+                              <div class="check-ripple"></div>\
+                            </div>\
+                          </div>\
+                          <div class="label">\
+                            <mark>رضا</mark>\
+                          </div>\
+                        </div>\
+                        <span class="task-msg">ماشاالله</span>\
+                      </li>'
+                    
+                }
+                if(taghi_all_status){
+                  temp +='<li>\
+                        <div class="checkbox">\
+                          <div class="check">\
+                            <input id="taghi" type="checkbox" name="task_02">\
+                            <div class="ripple-container">\
+                              <div class="check-off"></div>\
+                              <div class="check-on"><i class="fa fa-check"></i></div>\
+                              <div class="check-ripple"></div>\
+                            </div>\
+                          </div>\
+                          <div class="label">\
+                            <mark>تقی</mark>\
+                          </div>\
+                        </div>\
+                        <span class="task-msg">ماشاالله</span>\
+                      </li>'
+
+                }
+
+                if(ali_all_status){
+                  temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="ali" type="checkbox" name="task_02">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>علی</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+
+                }
+
+                if(shayan_all_status){
+                  temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="shayan" type="checkbox" name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>شایان</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+
+                }
+
+                if(saleh_all_status){
+                  temp +='<li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="saleh" type="checkbox" name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>صالح</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+
+                }
+
+                if(erfan_all_status){
+                  temp +='  <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="erfan" type="checkbox" name="task_01">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>عرفان</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+
+                }
+
+                if(danial_all_status){
+                  temp +=' <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="danial" type="checkbox" name="task_00">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>دانیال</mark>\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+
+                }
+
+                if(mohammadreza_all_status){
+                   temp +=' <li>\
+                      <div class="checkbox">\
+                        <div class="check">\
+                          <input id="mohammadreza" type="checkbox" name="task_00">\
+                          <div class="ripple-container">\
+                            <div class="check-off"></div>\
+                            <div class="check-on"><i class="fa fa-check"></i></div>\
+                            <div class="check-ripple"></div>\
+                          </div>\
+                        </div>\
+                        <div class="label">\
+                          <mark>محمد رضا</mark>\
+                          <br>\
+                          <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
+                        </div>\
+                      </div>\
+                      <span class="task-msg">ماشاالله</span>\
+                    </li>'
+
+                }
+            }
+
+        
+         
+        
 
         
 
-
-    var temp = '<main>\
-        <header>\
-          <span style="display:none;"><i class="fa fa-arrow-left"></i><span style="display:none;" class="sr-only">Back</span></span>\
-          <h3 id="date">'+ "۱۳۹۶/۱۲/" + j +'</h3><br>\
-          <div class="task-indicators">\
-            <span><i class="fa fa-check"></i><h5 id="day">1</h5></span>\
-          </div>\
-        </header>\
-        <section class="task-list current">\
-          <center><h2>انجام دادند</h2></center>\
-          <ul>'
-    if(mohammadareza_status){
-      temp +=' <li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="mohammadreza" type="checkbox" checked name="task_00">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>محمد رضا</mark>\
-                  <br>\
-                  <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +=' <li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="mohammadreza" type="checkbox" name="task_00">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>محمد رضا</mark>\
-                  <br>\
-                  <!--<time datetime="05-12-2016">12 March 2016 - h 9:30 am</time>-->\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(danial_status){
-      temp +=' <li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="danial" type="checkbox" checked name="task_00">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>دانیال</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +=' <li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="danial" type="checkbox" name="task_00">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>دانیال</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(erfan_status){
-      temp +='  <li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="erfan" type="checkbox" checked name="task_01">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>عرفان</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +='  <li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="erfan" type="checkbox" name="task_01">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>عرفان</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(saleh_status){
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="saleh" type="checkbox" checked name="task_01">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>صالح</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="saleh" type="checkbox" name="task_01">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>صالح</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(shayan_status){
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="shayan" type="checkbox" checked name="task_01">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>شایان</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="shayan" type="checkbox" name="task_01">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>شایان</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(ali_status){
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="ali" type="checkbox" checked name="task_02">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>علی</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="ali" type="checkbox" name="task_02">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>علی</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(taghi_status){
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="taghi" type="checkbox" checked name="task_02">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>تقی</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                  <input id="taghi" type="checkbox" name="task_02">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>تقی</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    if(reza_status){
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                    <input id="reza" type="checkbox" checked checked name="task_02">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>رضا</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }else{
-      temp +='<li>\
-              <div class="checkbox">\
-                <div class="check">\
-                    <input id="reza" type="checkbox" name="task_02">\
-                  <div class="ripple-container">\
-                    <div class="check-off"></div>\
-                    <div class="check-on"><i class="fa fa-check"></i></div>\
-                    <div class="check-ripple"></div>\
-                  </div>\
-                </div>\
-                <div class="label">\
-                  <mark>رضا</mark>\
-                </div>\
-              </div>\
-              <span class="task-msg">ماشاالله</span>\
-            </li>'
-    }
-
-    temp +='</ul>\
-        </section>\
-      </main>'
-
-    
-
-
-$("#before_date").append(temp);
-temp = ''
-
     });
+temp +='</ul>\
+                </section>\
+              </main>'
+              $("#before_date").append(temp);
+              temp = ''
+
+  }
 
   },complete: function(c){
     
@@ -1396,9 +1727,25 @@ temp = ''
 promises.push( request);
   
 $.when.apply(null, promises).done(function(){
-   alert('All done')
+   //alert('All done')
 })
 
+$('body').css("font-family",'Vazir');
+
+  persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+  function traverse(el){
+    if(el.nodeType==3){
+      var list=el.data.match(/[0-9]/g);
+      if(list!=null && list.length!=0){
+        for(var i=0;i<list.length;i++)
+          el.data=el.data.replace(list[i],persian[list[i]]);
+      }
+    }
+    for(var i=0;i<el.childNodes.length;i++){
+      traverse(el.childNodes[i]);
+    }
+  }
+    traverse(document.body);
 
 });
 
