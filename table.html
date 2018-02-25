@@ -1,0 +1,444 @@
+<!--
+
+██████╗██████████████╗█████╗██████╗██╗   ████████████╗   ██╗
+██╔══████╔════╚══███╔██╔══████╔══████║   ██╚══██╔══╚██╗ ██╔╝
+██████╔█████╗   ███╔╝█████████║  ████║   ██║  ██║   ╚████╔╝ 
+██╔══████╔══╝  ███╔╝ ██╔══████║  ████║   ██║  ██║    ╚██╔╝  
+██║  ██████████████████║  ████████╔╚██████╔╝  ██║     ██║   
+╚═╝  ╚═╚══════╚══════╚═╝  ╚═╚═════╝ ╚═════╝   ╚═╝     ╚═╝   
+                                                            
+
+Developed for 30-day push ups challenge
+
+❤ for all friends  
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <title>Push-ups</title>
+  <style type="text/css">
+    /*
+Photo credits: https://stocksnap.io/
+Pen inspired by Radek Skrzypczak Dribbble. Check it out: https://dribbble.com/shots/2516608-Completed-task-animation
+*/
+@font-face {
+    font-family: "Vazir";
+    src: url(https://lib.arvancloud.com/ar/font/vazir-2.0.0/Vazir.ttf);
+}
+body {
+      background-color: #26282b;
+  font-family: "Vazir", sans-serif;
+  font-size: 14px;
+}
+
+html *, body * {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+/*-- Base Styles --*/
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+/*-- Sign Styles --*/
+.sign {
+  min-height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+body {
+  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+  background-size: cover;
+  background-position: center;
+  background-color: #141414;
+}
+.sign__word {
+  font-size: 5.6rem;
+  text-align: center;
+  line-height: 1;
+  color: #940d0d;
+  -webkit-animation: neon .08s ease-in-out infinite alternate;
+          animation: neon .08s ease-in-out infinite alternate;
+}
+
+/*-- Animation Keyframes --*/
+@-webkit-keyframes neon {
+  from {
+    text-shadow:0 0 6px rgba(99, 4, 17, 0.92), 0 0 30px rgba(138, 8, 8, 0.34), 0 0 12px rgba(177, 8, 23, 0.52), 0 0 21px rgba(152, 3, 3, 0.92), 0 0 34px rgba(158, 8, 8, 0.78), 0 0 54px rgba(162, 4, 4, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(99, 4, 17, 0.92), 0 0 30px rgba(138, 8, 8, 0.34), 0 0 12px rgba(177, 8, 23, 0.52), 0 0 21px rgba(152, 3, 3, 0.92), 0 0 34px rgba(158, 8, 8, 0.78), 0 0 54px rgba(162, 4, 4, 0.92);
+  }
+}
+@keyframes neon {
+  from {
+    text-shadow: 0 0 6px rgba(99, 4, 17, 0.92), 0 0 30px rgba(138, 8, 8, 0.34), 0 0 12px rgba(177, 8, 23, 0.52), 0 0 21px rgba(152, 3, 3, 0.92), 0 0 34px rgba(158, 8, 8, 0.78), 0 0 54px rgba(162, 4, 4, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(99, 4, 17, 0.92), 0 0 30px rgba(138, 8, 8, 0.34), 0 0 12px rgba(177, 8, 23, 0.52), 0 0 21px rgba(152, 3, 3, 0.92), 0 0 34px rgba(158, 8, 8, 0.78), 0 0 54px rgba(162, 4, 4, 0.92);
+  }
+}
+
+
+.imgHolder {
+    position: relative;
+}
+.imgHolder span {
+    position: absolute;
+    right: 249px;
+    top: 10px;
+    color: white;
+    
+}
+img {
+    border: 1px solid red;
+    
+}
+  </style>
+</head>
+<body>
+<div class="sign">
+  <span class="sign__word">نتیجه ها</span>
+  
+</div>
+<br>
+<div id="rank">
+<div id="first" class="imgHolder">
+     
+</div>
+
+    <div id="semi-first" class="imgHolder">
+  
+</div> 
+  
+       <div id="secound" class="imgHolder">
+ 
+</div>
+
+    <div id="three" class="imgHolder">
+
+</div>
+
+    <div id="foure" class="imgHolder">
+
+</div>
+
+    <div id="five" class="imgHolder">
+
+</div>
+
+    <div id="six" class="imgHolder">
+
+</div>
+
+    <div id="seven" class="imgHolder">
+
+</div>   
+
+
+
+  
+
+
+  
+
+</div>
+<div id="before_date" style="
+    filter: blur(2px);
+"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+
+$( document ).ready(function() {
+
+
+
+
+
+
+
+
+function gregorian_to_jalali(gy,gm,gd){
+ g_d_m=[0,31,59,90,120,151,181,212,243,273,304,334];
+ if(gy > 1600){
+  jy=979;
+  gy-=1600;
+ }else{
+  jy=0;
+  gy-=621;
+ }
+ gy2=(gm > 2)?(gy+1):gy;
+ days=(365*gy) +(parseInt((gy2+3)/4)) -(parseInt((gy2+99)/100)) +(parseInt((gy2+399)/400)) -80 +gd +g_d_m[gm-1];
+ jy+=33*(parseInt(days/12053)); 
+ days%=12053;
+ jy+=4*(parseInt(days/1461));
+ days%=1461;
+ if(days > 365){
+  jy+=parseInt((days-1)/365);
+  days=(days-1)%365;
+ }
+ jm=(days < 186)?1+parseInt(days/31):7+parseInt((days-186)/30);
+ jd=1+((days < 186)?(days%31):((days-186)%30));
+ return [jy,jm,jd];
+}
+
+
+function jalali_to_gregorian(jy,jm,jd){
+ if(jy > 979){
+  gy=1600;
+  jy-=979;
+ }else{
+  gy=621;
+ }
+ days=(365*jy) +((parseInt(jy/33))*8) +(parseInt(((jy%33)+3)/4)) +78 +jd +((jm<7)?(jm-1)*31:((jm-7)*30)+186);
+ gy+=400*(parseInt(days/146097));
+ days%=146097;
+ if(days > 36524){
+  gy+=100*(parseInt(--days/36524));
+  days%=36524;
+  if(days >= 365)days++;
+ }
+ gy+=4*(parseInt(days/1461));
+ days%=1461;
+ if(days > 365){
+  gy+=parseInt((days-1)/365);
+  days=(days-1)%365;
+ }
+ gd=days+1;
+ sal_a=[0,31,((gy%4==0 && gy%100!=0) || (gy%400==0))?29:28,31,30,31,30,31,31,30,31,30,31];
+ for(gm=0;gm<13;gm++){
+  v=sal_a[gm];
+  if(gd <= v)break;
+  gd-=v;
+ }
+ return [gy,gm,gd]; 
+}
+
+
+
+var d = new Date();
+
+var month = d.getMonth()+1;
+var day = d.getDate();
+
+var output = d.getFullYear() + '/' +
+    (month<10 ? '' : '') + month + '/' +
+    (day<10 ? '' : '') + day;
+
+
+var start_date = '5'
+var persian_date = gregorian_to_jalali(d.getFullYear(),month,day)
+
+
+var now = persian_date[2]-start_date
+
+
+
+
+
+
+
+
+
+
+// append before current date
+var temp = '';
+var num_dayy = '';
+var promises = [];
+var reza = 0
+var mohammadreza = 0
+var erfan = 0
+var shayan = 0
+var saleh = 0
+var taghi = 0
+var danial = 0
+var ali = 0
+for(var j=1;j<=now;j++){
+   num_dayy = "day"+j
+    console.log(num_dayy)
+
+
+
+
+
+   var c= 0;
+
+  var request = $.ajax({
+  "async": false,
+    "crossDomain": true,
+    "url": "https://pushups30100-13fa.restdb.io/rest/"+num_dayy,
+    "method": "GET",
+    "cache": true,
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": "5a90765c16d5526228b426cc",
+      "cache-control": "no-cache"
+    },
+    success: function (response) {
+      
+
+			$.each(response, function (i, item) {
+				reza += parseInt(item['reza']) || 0
+				ali += parseInt(item['ali']) || 0
+				mohammadreza += parseInt(item['mohammadreza']) || 0
+				erfan += parseInt(item['erfan']) || 0
+				shayan += parseInt(item['shayan']) || 0
+				saleh += parseInt(item['saleh']) || 0
+				danial += parseInt(item['danial']) || 0
+				taghi += parseInt(item['taghi']) || 0
+			});
+
+
+
+
+            }
+
+        
+         
+        
+
+        
+
+    });
+
+
+  }
+
+
+  var ali_score = ali*100;
+  var reza_score = reza*100
+  var mohammadreza_score = mohammadreza*100
+  var shayan_score = shayan * 100
+  var saleh_score = saleh * 100;
+  var taghi_score = taghi * 100;
+  var danial_score = danial * 100;
+  var erfan_score = erfan * 100;
+
+
+
+
+// [0] is the id, [1] is the price
+var myArray = [
+	["alai", "d"],
+    ["ali", ali_score],
+    ["mohammadreza", mohammadreza_score],
+    ["erfan", erfan_score],
+    ["shayan", shayan_score],
+    ["reza", reza_score],
+    ["saleh", saleh_score],
+    ["taghi", taghi_score],
+    ["danial", danial_score]
+];
+
+
+var s= {};
+
+s.danial = '<img id="img_danial" src="danial.jpg" style="width:20%;margin-left: 261px;"><span class="sign__word" id="txt_danial"></span>';
+s.reza = '<img id="img_reza" src="reza.jpg" style="width:20%;height:20em;margin-left: 261px;"><span class="sign__word" id="txt_reza"></span>';
+s.shayan = '<img id="img_shayan" src="shayan.jpg" style="width:20%;margin-left: 261px;"><span class="sign__word" id="txt_shayan"></span>';
+s.ali = '<img id="img_ali" src="ali.jpg" style="width:20%;margin-left: 261px;"><span class="sign__word" id="txt_ali"></span>';
+s.mohammadreza = '<img id="img_mohammadreza" src="mohammadreza.jpg" style="width:20%;margin-left: 261px;"><span class="sign__word" id="txt_mohammadreza"></span>';
+s.taghi = '<img id="img_taghi" src="taghi.jpg" style="width:20%;height:20em;margin-left: 261px;"><span class="sign__word" id="txt_taghi"></span>';
+s.saleh = '<img id="img_saleh" src="saleh.jpg" style="width:20%;margin-left: 261px;"><span class="sign__word" id="txt_saleh"></span>';
+s.erfan = '<img id="img_erfan" src="erfan.jpg" style="width:20%;margin-left: 261px;"><span class="sign__word" id="txt_erfan"></span>';
+
+
+myArray.sort(function(a, b) {
+    return a[1] - b[1];
+});
+var j =1;
+var index, entry;
+for (index = myArray.length-1; index > j; --index) {
+    entry = myArray[index];
+    
+    if(index==8){
+		 $("#first").append(s[entry[0]])
+    }else if(index ==7){
+    	 $("#semi-first").append(s[entry[0]])
+    }else if(index ==6){
+    	 $("#secound").append(s[entry[0]])
+    }else if(index ==5){
+    	 $("#three").append(s[entry[0]])
+    }else if(index ==4){
+    	 $("#foure").append(s[entry[0]])
+    }else if(index ==3){
+    	 $("#five").append(s[entry[0]])
+    }else if(index ==2){
+    	 $("#six").append(s[entry[0]])
+    }else if(index ==1){
+    	 $("#seven").append(s[entry[0]])
+    }
+   
+
+}
+
+
+ 
+$("#txt_ali").text(ali_score);
+  $("#txt_reza").text(reza_score);
+  $("#txt_mohammadreza").text(mohammadreza_score);
+$("#txt_shayan").text(shayan_score);
+$("#txt_saleh").text(saleh_score);
+$("#txt_taghi").text(taghi_score);
+$("#txt_danial").text(danial_score);
+$("#txt_erfan").text(erfan_score);
+
+
+
+
+
+
+
+
+promises.push( request);
+  
+$.when.apply(null, promises).done(function(){
+   //alert('All done')
+})
+
+
+('body').css("font-family",'Vazir');
+
+  persian={0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'};
+  function traverse(el){
+    if(el.nodeType==3){
+      var list=el.data.match(/[0-9]/g);
+      if(list!=null && list.length!=0){
+        for(var i=0;i<list.length;i++)
+          el.data=el.data.replace(list[i],persian[list[i]]);
+      }
+    }
+    for(var i=0;i<el.childNodes.length;i++){
+      traverse(el.childNodes[i]);
+    }
+  }
+    traverse(document.body);
+});
+
+
+</script>
+</body>
+</html>
