@@ -247,17 +247,17 @@ var day = d.getDate()+1;
 var output = d.getFullYear() + '/' +
     (month<10 ? '' : '') + month + '/' +
     (day<10 ? '' : '') + day;
-
+console.log(output)
 
 var start_date = '7'
 var persian_date = gregorian_to_jalali(d.getFullYear(),month,day)
 
-
+console.log(persian_date)
 var now = persian_date[2]-start_date
 
 
 
-
+console.log(now)
 
 
 
@@ -276,6 +276,9 @@ var saleh = 0
 var taghi = 0
 var danial = 0
 var ali = 0
+if(now==0){
+	now =1 
+}
 for(var j=1;j<=now;j++){
    num_dayy = "day"+j
     console.log(num_dayy)
