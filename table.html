@@ -241,7 +241,7 @@ function jalali_to_gregorian(jy,jm,jd){
   var request = $.ajax({
   "async": false,
     "crossDomain": true,
-    "url": "http://api.timezonedb.com/v2/get-time-zone?key=1SVTWWF8F5NP&format=json&by=zone&zone=Asia/Tehran",
+    "url": "https://api.timezonedb.com/v2/get-time-zone?key=1SVTWWF8F5NP&format=json&by=zone&zone=Asia/Tehran",
     "method": "GET",
     success: function (response) {
       $.each(response, function (i, item) {
@@ -281,7 +281,7 @@ var start_date = '7'
 var persian_date = gregorian_to_jalali(d.getFullYear(),month,parseInt(day)+0)
 
 console.log(persian_date)
-var now = persian_date[2]-start_date
+var now = (persian_date[2]-start_date)+1
 
 
 
