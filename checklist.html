@@ -1363,7 +1363,6 @@ temp +='</ul>\
                   <center><h2>انجام دادند</h2></center>\
                   <ul>'
         $.each(response, function (i, item) {
-                console.log(response.length)
                 c++;
                   //console.log(item['reza'])
                 if(item['reza']!="" && reza_status!=true){
@@ -1371,7 +1370,7 @@ temp +='</ul>\
                   reza_all_status = false;
                 }
                 //console.log(item['mohammadareza'])
-                if(item['mohammadareza']!=""  && mohammadareza_status!=true){
+                if(item['mohammadreza']!=""  && mohammadareza_status!=true){
                   mohammadareza_status = true;
                   mohammadreza_all_status = false;
                 }
@@ -1574,7 +1573,6 @@ temp +='</ul>\
 
             
             if(c==response.length){
-              console.log("sdfsdf")
                 if(reza_all_status){
                   temp +='<li>\
                         <div class="checkbox">\
