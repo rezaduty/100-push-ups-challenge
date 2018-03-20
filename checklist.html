@@ -772,17 +772,17 @@ var start_date = '7'
 var persian_date = gregorian_to_jalali(d.getFullYear(),month,parseInt(day)+0)
 $("#date").text(persian_date)
 
-if(persian_date[2] == start_date){
+/*if(persian_date[2] == start_date){
   num_day = "day1"
   $("#day").text("1")
   console.log(num_day)
-}else{
+}else{*/
   num_day = (persian_date[2]-start_date)+1
   $("#day").text(num_day)
   console.log(num_day)
   num_day = "day"+num_day
   console.log(num_day)
-}
+//}
 
 
 var settings = {
