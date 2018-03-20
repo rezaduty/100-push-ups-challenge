@@ -730,10 +730,13 @@ var d = new Date();
 var month = d.getMonth()+1;
 var day = d.getDate();
 
-var output = d.getFullYear() + '/' +
+/*var output = d.getFullYear() + '/' +
     (month<10 ? '' : '') + month + '/' +
     (day<10 ? '' : '') + day;
-
+*/
+var output = '1397' + '/' +
+    (month<10 ? '' : '') + month + '/' +
+    (day<10 ? '' : '') + day;
 
   var request = $.ajax({
   "async": false,
@@ -768,8 +771,8 @@ var output = d.getFullYear() + '/' +
 //console.log(gregorian_to_jalali(d.getFullYear(),month,day))
 var num_dat = ""
 var start_date = '7'
-
-var persian_date = gregorian_to_jalali(d.getFullYear(),month,parseInt(day)+0)
+//d.getFullYear()
+var persian_date = gregorian_to_jalali(1397,month,parseInt(day)+0)
 $("#date").text(persian_date)
 
 if(persian_date[2] == start_date){

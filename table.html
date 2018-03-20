@@ -273,13 +273,16 @@ var month = d.getMonth()+1;
 
 
 
-var output = d.getFullYear() + '/' +
+/*var output = d.getFullYear() + '/' +
+    (month<10 ? '' : '') + month + '/' +
+    (day<10 ? '' : '') + day;*/
+var output = '1397' + '/' +
     (month<10 ? '' : '') + month + '/' +
     (day<10 ? '' : '') + day;
 console.log(output)
 
 var start_date = '7'
-var persian_date = gregorian_to_jalali(d.getFullYear(),month,parseInt(day)+0)
+var persian_date = gregorian_to_jalali('1397',month,parseInt(day)+0)
 
 console.log(persian_date)
 var now = (persian_date[2]-start_date)+1
