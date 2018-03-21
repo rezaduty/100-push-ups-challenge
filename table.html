@@ -16,6 +16,7 @@ Developed for 30-day push ups challenge
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<meta charset="utf-8">
   <title>Push-ups</title>
   <style type="text/css">
     /*
@@ -278,11 +279,12 @@ var output = d.getFullYear() + '/' +
     (day<10 ? '' : '') + day;
 console.log(output)
 
-var start_date = '7'
+//var start_date = '7'
+var start_date = '0'
 var persian_date = gregorian_to_jalali(d.getFullYear(),month,parseInt(day)+0)
 
 console.log(persian_date)
-var now = (persian_date[2]-start_date)+1
+var now = (persian_date[2]+23)
 
 
 
@@ -297,19 +299,19 @@ console.log(now)
 var temp = '';
 var num_dayy = '';
 var promises = [];
-// after 15 day
-var reza = 1400
+// after 22 day
+var reza = 2200
 var mohammadreza = 30
 var erfan = 120
 var shayan = 0
-var saleh = 261
+var saleh = 371
 var taghi = 200
 var danial = 0
 var ali = 135
 if(now==0){
 	now = 1
 }
-for(var j=15;j<=now;j++){
+for(var j=24;j<=now;j++){
    num_dayy = "day"+j
     console.log(num_dayy)
 
